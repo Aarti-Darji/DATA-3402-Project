@@ -19,7 +19,7 @@
   * We had test data and train data of the list of all passengers.
   * The size of the data is 1.24mb.
   
- ### test.df:
+ #### train.csv:
  * PassengerId - A unique Id for each passenger. Each Id takes the form gggg_pp where gggg indicates a group the passenger is travelling with and pp is their number within the group. People in a group are often family members, but not always.
  * HomePlanet - The planet the passenger departed from, typically their planet of permanent residence.
  * CryoSleep - Indicates whether the passenger elected to be put into suspended animation for the duration of the voyage. Passengers in cryosleep are confined to their cabins.
@@ -31,35 +31,46 @@ Destination - The planet the passenger will be debarking to.
 Name - The first and last names of the passenger.
 * Transported - Whether the passenger was transported to another dimension. This is the target, the column you are trying to predict.
 
-### test.csv:
+#### test.csv:
 
 Personal records for the remaining one-third (~4300) of the passengers, to be used as test data. Your task is to predict the value of Transported for the passengers in this set.
 
 
-#### Preprocessing / Clean up
+### Preprocessing / Clean up
 
-* Made a couple histograms to visualize the data
-* Found the outliers
-* Dropped null values
-* Coverted categorical and bool values into int columns. 
+Firstly, we made a couple of histrograms to better understand the data. After that we got rid of the null values and and converted categorical values and bool values into int values. We performed feature engineering using SimpleImputer from sklearn.impute.
+
+![image](https://user-images.githubusercontent.com/98277599/207733424-dcda6ef8-c2d7-45c9-af11-c2f0bad077c8.png)
+
+Figure 1: This shows the number of null values for each variable
+
+![image](https://user-images.githubusercontent.com/98277599/207733752-1f522004-f2c9-47f4-894a-32d6380532c5.png)
+
+Figure 2: Converting to integer columns.
 
 #### Data Visualization
 
-![image](https://user-images.githubusercontent.com/98277599/207662029-76b52b8c-7987-42d8-b55f-ffe32301936b.png)
+![image](https://user-images.githubusercontent.com/98277599/207734027-9b234f8b-03d9-45f4-bf1a-8935a6a9a48a.png)
 
-The room service variable had a lot of outliers which we eliminate later. 
+Figure 3: Passngers from their homeplanet and whether or not they were transported.
 
-![image](https://user-images.githubusercontent.com/98277599/207668589-38e3914f-2e14-4c11-a94f-858458d61dd4.png)
+![image](https://user-images.githubusercontent.com/98277599/207734337-47e204e6-7b52-4eaf-a89f-d7d63bab25f7.png)
+
+Figure 4: Representation of the age of the passengers.
+
+![image](https://user-images.githubusercontent.com/98277599/207734393-2880c58d-debb-4ee9-af00-2a039d7c232b.png)
+
+Figure 5: Outliers in the category of roomservice are visible here.
 
 
 ### Problem Formulation
 
 * Define: 
-  * Input / Output : Train data with passnger data without information on whether they're missing or not
+  * Input / Output : The model is trained using the train data and then provided with the testing data where it predicts which passngers got transported.
   * Models: I used logistic regression, decision tree and random forest classifier. I got the best results from the random forest classifier. 
-  * Logistic regression : Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.
-  * DecisionTreeClassifer : A decision tree is a non-parametric supervised learning algorithm, which is utilized for both classification and regression tasks. It has a hierarchical, tree structure, which consists of a root node, branches, internal nodes and leaf nodes.
-  * RandomForestClassifier : Random forest classifier can be used to solve for regression or classification problems. The random forest algorithm is made up of a collection of decision trees, and each tree in the ensemble is comprised of a data sample drawn from a training set with replacement, called the bootstrap sample.
+   #### Logistic regression : Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.
+   #### DecisionTreeClassifer : A decision tree is a non-parametric supervised learning algorithm, which is utilized for both classification and regression tasks. It has a hierarchical, tree structure, which consists of a root node, branches, internal nodes and leaf nodes.
+  #### RandomForestClassifier : Random forest classifier can be used to solve for regression or classification problems. The random forest algorithm is made up of a collection of decision trees, and each tree in the ensemble is comprised of a data sample drawn from a training set with replacement, called the bootstrap sample.
 
 ### Training
 
@@ -68,9 +79,7 @@ The room service variable had a lot of outliers which we eliminate later.
   * It took about 15-20 minutes to train the data
   * No difficulties
   
-
-### Performance Comparison
-
+  
 Logistic Regression
 ![image](https://user-images.githubusercontent.com/98277599/207664951-34a8077c-5c36-499b-b7e7-44cf43a5c5ea.png)
 
@@ -80,13 +89,19 @@ DecisionTreeClassifier
 RandomForestClassifier
 ![image](https://user-images.githubusercontent.com/98277599/207665250-61b5d3c9-c5a8-4910-954b-367e87d10c09.png)
 
+### Performance Comparison
+
+As mentioned earlier, random forest classifier performed the best of them all.
+
+![image](https://user-images.githubusercontent.com/98277599/207734222-872940e0-b861-433f-9acd-d6c0f6063445.png)
+
 
 ### Conclusions
 
 * Random forest classifer worked better than logistic regression and decision tree classifier
 ### Future Work
 
-* Building neural network models or utilizing deep learning techniques
+* Building neural network models or utilizing deep learning techniques.
 
 ## How to reproduce results
 
