@@ -81,12 +81,15 @@ Figure 5: Outliers in the category of roomservice are visible here.
   
   
 Logistic Regression
+
 ![image](https://user-images.githubusercontent.com/98277599/207664951-34a8077c-5c36-499b-b7e7-44cf43a5c5ea.png)
 
-DecisionTreeClassifier
+Decision Tree Classifier
+
 ![image](https://user-images.githubusercontent.com/98277599/207665098-9cf6d889-654c-46e0-89b4-7040e4fdf4e8.png)
 
-RandomForestClassifier
+Random Forest Classifier
+
 ![image](https://user-images.githubusercontent.com/98277599/207665250-61b5d3c9-c5a8-4910-954b-367e87d10c09.png)
 
 ### Performance Comparison
@@ -101,11 +104,16 @@ As mentioned earlier, random forest classifier performed the best of them all.
 * Random forest classifer worked better than logistic regression and decision tree classifier
 ### Future Work
 
-* Building neural network models or utilizing deep learning techniques.
+* In the future, I can learn to building neural network models or utilize deep learning techniques. I can also utilize different techniques to understand which features are more important and how to clean up the data better.
 
 ## How to reproduce results
 
    * I used google colab as it was a group project with another classmate. We used google colab to collaborate and used python and libraries that are sklearn, pandas, numpy, matplotlib and seaborn.
+   * Furthermore, following the following commands below to get the required libraries and modules.
+   
+   ![image](https://user-images.githubusercontent.com/98277599/207735439-856e870a-834d-4b68-af68-ac1759d55019.png)
+
+   * Follow the steps from the Data Visualisation, Feature Engineering, Cleaning data, and Model Training section of FinalExamPrject.ipynb to get the required results.
 
 ### Overview of files in repository
 
